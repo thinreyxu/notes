@@ -386,14 +386,14 @@ h6 {
   margin: 2.33em 0;
 }
 .heading {
-  font: 24px/1.2 'Helvetica Neue', Arial, 'WenQuanYi Micro Hei', 'Microsoft Yahei', 'Hiragino Sans GB', STXihei, sans-serif;
+  font: 1.71em/1.2em 'Helvetica Neue', Arial, 'WenQuanYi Micro Hei', 'Microsoft Yahei', 'Hiragino Sans GB', STXihei, sans-serif;
 }
 .text {
-  font: 16px/2 'Merriweather', FangSong, serif;
+  font: 1.14em/2em 'Merriweather', FangSong, serif;
 }
 .summary,
 .note-body {
-  font: 14px/1.8 'Merriweather', FangSong, serif;
+  font: 1em/1.8em 'Merriweather', FangSong, serif;
 }
 .text-muted {
   color: #b3b3ad;
@@ -537,7 +537,7 @@ textarea.form-control {
   box-shadow: 0 0 5px #f0f0f0;
 }
 .note-head {
-  padding: 15px 20px;
+  padding: 20px 20px 10px;
   border-bottom: solid 1px #f7f7f7;
   background: #f7f7f7;
 }
