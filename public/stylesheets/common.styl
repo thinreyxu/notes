@@ -1,0 +1,250 @@
+::-moz-selection
+  background-color: $selectcolor
+  text-shadow: none
+
+::selection
+  background-color: $selectcolor
+  text-shadow: none
+
+::-webkit-scrollbar
+  width: 6px
+  height: 6px
+
+::-webkit-scrollbar-track
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1)
+  background: $background
+  
+::-webkit-scrollbar-thumb
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1)
+  background: $selectcolor
+    
+::-webkit-scrollbar-track:window-inactive
+  -webkit-box-shadow: none
+  background: none
+
+::-webkit-scrollbar-thumb:window-inactive
+  -webkit-box-shadow: none
+  background: none
+
+
+body
+  font: 14px/1.8 $sansserif
+  color: $textcolor
+  background: $background
+
+a
+  color: $linkcolor
+  text-decoration: none
+  &:hover
+    color: $hovercolor
+    text-decoration: underline
+
+.clearfix
+  *zoom: 1
+  &:before, &:after
+    content: ''
+    display: table
+  &:after
+    clear: both
+
+.pull-left
+  float: left !important
+
+.pull-right
+  float: right !important
+
+.hide
+  display: none !important
+
+.show
+  display: block !important
+
+.invisible
+  visibility: hidden
+
+.ir
+  background-color: transparent
+  border: 0
+  overflow: hidden
+  *text-indent: -9999px
+  *white-space: nowrap
+
+  &:before
+    content: ''
+    display: block
+    width: 0
+    height: 100%
+
+.ibw
+  font-size: 0
+  line-height: 0
+  letter-spacing: -5px
+  *letter-spacing: normal
+  *word-spacing: -1px
+
+.ib
+  display: inline-block
+  *zoom: 1
+  *display: inline
+  font-size: 14px
+  line-height: 1.8
+  letter-spacing: normal
+  word-spacing: normal
+  vertical-align: top
+
+center-block(left = auto, right = auto)
+  display: block
+  margin-left: left
+  margin-right: right
+
+.center-block
+  center-block()
+
+.left-block
+  center-block(0, auto)
+
+.right-block
+  center-block(auto, 0)
+
+.text-left
+  text-align: left
+
+.text-right
+  text-align: right
+
+.text-center
+  text-align: center
+
+h1
+  font-size: 2em
+  margin: 0.67em 0
+
+h2
+  font-size: 1.5em
+  margin: 0.83em 0
+
+h3
+  font-size: 1.17em
+  margin: 1em 0
+
+h4
+  font-size: 1em
+  margin: 1.33em 0
+
+h5
+  font-size: 0.83em
+  margin: 1.67em 0
+
+h6
+  font-size: 0.67em
+  margin: 2.33em 0
+
+.heading
+  font: 24px/1.2 $sansserif
+
+.text
+  font: 16px/2 $serif
+
+.summary
+  font: 14px/1.8 $serif
+
+.text-muted
+  color: $mutedcolor
+
+.small
+  font-size: 85%
+
+// form & button
+
+btn-size(pv, ph, bdr)
+  padding: pv ph
+  border-radius: bdr
+
+btn-color(c, bdc, bgc)
+  color: c
+  border-color: bdc
+  background-color: bgc
+  &:hover,
+  &:focus
+    color: darken(c, 15)
+    border-color: darken(bdc, 15)
+    background-color: lighten(bgc, 15)
+
+.btn
+  position: relative
+  border-style: solid
+  border-width: 1px
+  margin: 0 0.3em
+  line-height: 1
+  z-index: 1
+  outline-color: $linkcolor
+  btn-size(10px, 14px, 4px)
+  btn-color(#81817d, #f0efe9, #fff)
+  &:hover,
+  &:focus
+    z-index: 10
+    text-decoration: none
+
+.btn-xs
+  btn-size(2px, 6px, 3px)
+
+.btn-default
+  btn-color(#81817d, #f0efe9, #fff)
+
+.btn-group
+  .btn
+    margin-left: -1px
+    margin-right: 0
+    border-radius: 0
+  .btn:first-child
+    margin-left: 0
+    border-top-left-radius: 4px
+    border-bottom-left-radius: 4px
+  .btn:last-child
+    border-top-right-radius: 4px
+    border-bottom-right-radius: 4px
+    border-right-width: 1px
+
+.form-control
+  font-family: $serif
+  width: 100%
+  border: solid 1px $bordercolor
+  border-radius: 4px;
+  background: #fff
+  padding: 10px 10px
+  outline-color: $linkcolor
+  &:hover,
+  &:focus
+    color: darken($textcolor, 15)
+    border-color: darken($bordercolor, 15)
+  box-shadow: inset 1px 1px 1px lighten($bordercolor, 2)
+input.form-control
+  height: 1em
+  line-height: 1
+textarea.form-control
+  line-height: 1.2
+.control-label
+  height: 1em
+  line-height: 1
+  padding: 11px 0
+  text-align: right
+.form-horizontal
+  .form-group
+    margin: 10px 0
+    @extend .clearfix
+  .control-label
+    width: 10%
+    margin-right: 2%
+  .control-wrapper
+    width: 75%
+    &.half
+      width: 35%
+  .control-label,
+  .control-wrapper
+    float: left
+  .opaque-label
+    margin-left: 12%
+  .btn:first-child
+    margin-left: 0
+  .btn:last-child
+    margin-right: 0

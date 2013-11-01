@@ -1,0 +1,15 @@
+extends layout
+block content
+  div.form
+    form(action='', method='POST', class='form-horizontal')
+      div(class='form-group')
+        label(for='inputName', class='col-sm-2 control-label') 用户
+        div(class='control-wrapper')
+          input(type='text', name='name', id='inputName', class='form-control')
+      div(class='form-group')
+        label(for='inputPass', class='col-sm-2 control-label') 密码
+        div(class='control-wrapper')
+          input(type='password', name='pass', id='inputPass', class='form-control')
+      div(class='form-group')
+        div(class='control-wrapper opaque-label text-center')
+          button(type='submit', class='btn btn-primary') 登录

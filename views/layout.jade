@@ -1,0 +1,27 @@
+!!! 5
+html
+  head
+    meta(charset='utf-8')
+    title= title
+    link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    div.container
+      header.header
+        h1= title
+      nav.nav
+        div.btn-group
+          a.btn(href='/note') 全部
+          if user
+            a.btn(href='/add') 添加
+            a.btn(href='/logout') 退出
+          if !user
+            a.btn(href='/login') 登录
+      div.content
+        if error
+          div.flash= error
+        if success
+          div.flash= success
+        block content
+      footer.footer
+        p &copy; Couchist.

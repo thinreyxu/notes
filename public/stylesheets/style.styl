@@ -1,0 +1,99 @@
+@import 'variables'
+@import 'reset'
+@import 'common'
+
+
+// ================================= 
+//  Site Specific Rules
+// =================================
+
+.container
+  // width: 900px
+  margin: 0 auto
+
+.header
+  text-align: center
+
+.footer
+  text-align: center
+  color: #999
+
+.nav
+  text-align: center
+  margin-bottom: 40px;
+  a
+    margin: 0 0.5em
+
+.content
+  @extend .clearfix
+
+.note
+  overflow: hidden
+  box-sizing: border-box
+  border: solid 1px #eeeeee
+  border-radius: 10px
+  background: #fff
+  box-shadow: 0 0 5px #f0f0f0
+
+.note-head
+  @extend .clearfix
+  @extend .small
+  padding: 15px 20px
+  border-bottom: solid 1px #f7f7f7
+  background: #f7f7f7
+  .wrapper
+    overflow: hidden
+    white-space: nowrap
+    text-overflow: ellipsis
+
+  .ts
+    margin-right: 1em
+
+.note-body
+  @extend .summary
+  padding: 0 20px
+  margin: 20px 0
+  height: 150px
+  overflow: hidden
+  font-family: $serif
+  text-align: justify
+
+  p
+    margin: 0
+
+.note-foot
+  padding: 0 20px
+
+.note-detail
+  .note
+    width: 600px
+    min-height: 480px
+    center-block()
+
+.note-list
+  @extend .ibw
+  @extend .text-center
+  center-block()
+  max-width: 1500px
+  .note
+    @extend .ib
+    @extend .text-left
+    width: 280px
+    min-height: 280px
+    margin: 10px
+
+
+// addedit form
+.addedit
+  width: 600px
+  margin: 0 auto
+
+for num in (1 .. 3)
+  .rotate-{num}
+    -webkit-transform: rotate(num * 1deg)
+for num in (-3 .. -1)
+  .rotate-{num}
+    -webkit-transform: rotate(num * 1deg)
+
+.flash
+  @extend .text-center

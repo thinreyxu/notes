@@ -1,0 +1,18 @@
+extends layout
+block content
+  div.note-detail
+    div.note
+      header.note-head
+        div.pull-left
+          - var d = new Date(note.ts)
+          - var date = [d.getFullYear(), d.getMonth() + 1, d.getDate()].join('/')
+          - var time = [d.getHours(), d.getMinutes(), d.getSeconds()].join(':')
+          time.ts= date + ' ' + time 
+          span.title= note.title
+        if user
+          div.pull-right.note-option
+            div.btn-group
+              a.btn.btn-xs(href='/edit/' + note._id || note.ts) 编辑
+              a.btn.btn-xs(href='/delete/' + note._id || note.ts) 删除
+      div.note-body
+        p= note.note

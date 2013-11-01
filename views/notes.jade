@@ -1,0 +1,19 @@
+extends layout
+block content
+  div.note-list
+    each note, index in notes
+      div.note(class='rotate-' + (Math.round(Math.random()) * 2 - 1) * Math.floor(Math.random() * 3 + 1))
+        header.note-head
+          div.wrapper
+            - var d = new Date(note.ts)
+            - var date = [d.getFullYear(), d.getMonth() + 1, d.getDate()].join('/')
+            - var time = [d.getHours(), d.getMinutes(), d.getSeconds()].join(':')
+            time.ts= date 
+            span.title= note.title
+        div.note-body
+          //- if note.note.length < 100
+          p= note.note
+          //- else
+            p= note.note.substring(0, 100) + ' ...'
+        footer.note-foot
+          a(href='/note/' + note._id || note.ts) 查看详细
