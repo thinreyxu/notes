@@ -40,7 +40,7 @@ module.exports = function (app) {
         notes = [];
       }
       res.render('notes', {
-        title: 'Notes',
+        title: '便签',
         error: req.flash('error').toString(),
         success: req.flash('success').toString(),
         notes: notes,
@@ -56,7 +56,7 @@ module.exports = function (app) {
         return res.redirect('/note');
       }
       res.render('note', {
-        title: 'Note',
+        title: '便签',
         error: req.flash('error').toString(),
         success: req.flash('success').toString(),
         note: note,
@@ -67,7 +67,7 @@ module.exports = function (app) {
 
   app.get('/add', checkLogin, function (req, res) {
     res.render('edit', {
-      title: 'Add New Note',
+      title: '添加新便签',
       error: req.flash('error').toString(),
       success: req.flash('success').toString(),
       postPath: '/add',
@@ -95,7 +95,7 @@ module.exports = function (app) {
         return res.redirect('/note');
       }
       res.render('edit', {
-        title: 'Add New Note',
+        title: '编辑便签',
         error: req.flash('error').toString(),
         success: req.flash('success').toString(),
         postPath: '/edit/' + req.params.id,
@@ -130,7 +130,7 @@ module.exports = function (app) {
 
   app.get('/login', checkNotLogin, function (req, res) {
     res.render('login', {
-      title: 'Login',
+      title: '登录',
       error: req.flash('error').toString(),
       success: req.flash('success').toString(),
       user: req.session.user
