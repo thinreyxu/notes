@@ -1,0 +1,16 @@
+extends layout
+block content
+  div.note-detail.form-addEdit
+    form(method='post', action=postPath, autocomplete='off')
+      div.note
+        header.note-head
+          - var d = formatDate(note && note.ts || Date.now(), 'YYYY/MM/DD hh:mm:ss')
+          time.ts= d
+          span.title
+            input.form-control.inputTitle(name='title', value=note && note.title || '')
+        div.note-body
+          textarea.form-control.inputNote(name='note', rows='10')= note && note.note || ''
+        div.btn-wrapper
+          div.btn-group
+            button.btn.btn-default.btn-sm(type='submit') 保存
+

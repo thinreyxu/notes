@@ -1,0 +1,14 @@
+extends layout
+block content
+  div.note-detail
+    div.note(class=user?'admin':'')
+      header.note-head
+        - var d = formatDate(note.ts, 'YYYY/MM/DD hh:mm:ss')
+        time.ts= d
+        span.title= note.title
+      div.note-body
+        p= note.note
+      if user
+        div.btn-group.btn-wrapper
+          a.btn.btn-sm.btn-default(href='/edit/' + note._id || note.ts) 编辑
+          a.btn.btn-sm.btn-default(href='/delete/' + note._id || note.ts) 删除

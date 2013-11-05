@@ -4,12 +4,13 @@ var express = require('express')
 var s = require('./config/setting');
 var db = require('./models/db-' + s.db);
 var routes = require('./routes');
+var helpers = require('./lib/viewHelpers');
 
 var app = express();
 
 app.set('dbEngine', s.db);
 app.set('port', process.env.PORT || 3000)
-app.set('views', __dirname + '/views');
+app.set('views', __dirname + '/public/views');
 app.set('view engine', 'jade');
 
 app.use(require('connect-flash')()); //flash 是需要 session 的
@@ -26,7 +27,6 @@ app.use(express.session({
     maxAge: 86400000 * 30
   }
 }));
-
 app.use(app.router);
 app.use(require('stylus').middleware(__dirname + '/public'));
 app.use(express.static(__dirname + '/public'));
@@ -45,7 +45,7 @@ app.use(function (err, req, res, next) {
 if ('development' === app.get('env')) {
   app.use(express.errorHandler());
 }
-
+helpers(app);
 routes(app);
 
 var server = http.createServer(app).listen(app.get('port'), function () {

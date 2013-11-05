@@ -62,11 +62,11 @@ exports.edit = function (id, title, note, callback) {
 };
 
 exports.all = function (callback) {
-  Note.find({}, callback);
+  Note.find({}, null, { sort: { ts: -1 } }, callback);
 };
 
 exports.each = function (each, callback) {
-  Note.find({}, function (err, docs) {
+  Note.find({}, null, { sort: { ts: -1 } }, function (err, docs) {
     if (err) {
       util.log('FAIL ' + err);
       return callback(err);
