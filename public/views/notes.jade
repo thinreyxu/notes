@@ -4,12 +4,11 @@ block content
     each note, index in notes
       div.note(class='rotate-' + (Math.round(Math.random()) * 2 - 1) * Math.floor(Math.random() * 3 + 1))
         header.note-head
-          div.wrapper
-            - var d = new Date(note.ts)
-            - var date = [d.getFullYear(), d.getMonth() + 1, d.getDate()].join('/')
-            - var time = [d.getHours(), d.getMinutes(), d.getSeconds()].join(':')
-            time.ts= date 
-            span.title= note.title
+          - var d = new Date(note.ts)
+          - var date = [d.getFullYear(), d.getMonth() + 1, d.getDate()].join('/')
+          - var time = [d.getHours(), d.getMinutes(), d.getSeconds()].join(':')
+          time.ts= date 
+          span.title= note.title
         div.note-body
           //- if note.note.length < 100
           p= note.note
